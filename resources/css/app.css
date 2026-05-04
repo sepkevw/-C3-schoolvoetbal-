@@ -1,11 +1,35 @@
-@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+/* Eigen styling */
+body {
+    background-color: #000; /* zwart */
+    color: #fff; /* witte tekst zodat je iets ziet */
+    font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+nav {
+    display: flex;
+    gap: 20px;
+    padding: 16px;
+    background-color: #110139;
+    justify-content: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.home-page {
+    display: flex;
+
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
 }

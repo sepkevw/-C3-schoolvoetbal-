@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ env('APP_NAME') }}</title>
+@vite('resources/css/app.css')
 </head>
 <body>
 <header>
+
     <nav>
+
         <a href="{{ route('home') }}">home-pagina</a>
         <a href="{{ route('teams') }}">teams</a>
+         <img src="{{ asset('img/football.png') }}" alt="logo" class="logo">
+         <h1>schoolvoetbal</h1>
+        <img src="{{ asset('img/football.png') }}" alt="logo" class="logo">
         <a href="{{ route('wedstrijden') }}">wedstrijden</a>
         <a href="{{ route('inzetten') }}">inzetten</a>
     </nav>
