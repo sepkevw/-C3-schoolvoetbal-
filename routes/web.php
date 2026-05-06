@@ -1,24 +1,23 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\WedstrijdController;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+/*
+|----------------------------------------------------------------------
+| Routes
+|----------------------------------------------------------------------
+*/
 
-Route::get('/teams', function () {
-    return view('teams');
-})->name('teams');
+Route::get('/', [WedstrijdController::class, 'index'])->name('home');
 
-Route::get('/wedstrijden', function () {
-    return view('wedstrijden');
-})->name('wedstrijden');
+// Teams
+Route::get('/teams', [TeamController::class, 'index'])->name('teams');
+Route::post('/teams', [TeamController::class, 'store']);
 
-Route::get('/inzetten', function () {
-    return view('inzetten');
-})->name('inzetten');
-
-
-Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
-Route::post('/register', [AuthController::class, 'register']);
+// Wedstrijden (BELANGRIJK: deze ontbrak)
+Route::get('/wedstrijden', [WedstrijdController::class, 'index'])->name('wedstrijden');
+Route::get('/inzetten', [WedstrijdController::class, 'index'])->name('inzetten');
+// Schema genereren
+Route::post('/schema/generate', [WedstrijdController::class, 'generate'])->name('schema.generate');
