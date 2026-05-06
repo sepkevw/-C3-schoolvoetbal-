@@ -25,6 +25,4 @@ class TeamController extends Controller
 
         return redirect()->back();
     }
-
-
 }

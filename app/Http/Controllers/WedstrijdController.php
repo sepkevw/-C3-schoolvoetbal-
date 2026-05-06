@@ -15,11 +15,13 @@ class WedstrijdController extends Controller
 
     public function generate()
     {
+        // oude wedstrijden verwijderen
+        Wedstrijd::truncate();
+
         $teams = Team::all();
 
-        for ($i = 0; $i < count($teams); $i++) {
-            for ($j = $i + 1; $j < count($teams); $j++) {
-
+        for ($i = 0; $i < $teams->count(); $i++) {
+            for ($j = $i + 1; $j < $teams->count(); $j++) {
                 Wedstrijd::create([
                     'team1_id' => $teams[$i]->id,
                     'team2_id' => $teams[$j]->id,

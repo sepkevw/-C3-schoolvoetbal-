@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
+
+
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Team;
 
 class Wedstrijd extends Model
 {
-    protected $table = 'wedstrijden';
+    protected $table = 'wedstrijden'; // <-- DIT MIS JE
 
     protected $fillable = ['team1_id', 'team2_id', 'datum', 'locatie'];
-
     public function team1()
     {
         return $this->belongsTo(Team::class, 'team1_id');

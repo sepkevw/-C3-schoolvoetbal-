@@ -1,15 +1,15 @@
 <x-base-layout>
-    <h1>Teams</h1>
+    <h1 class="text-2xl font-bold mb-4">Teams</h1>
 
-    <form method="POST" action="/teams">
+    <form method="POST" action="/teams" class="mb-4">
         @csrf
-        <input type="text" name="naam" placeholder="Team naam">
-        <button type="submit">Toevoegen</button>
+        <input type="text" name="name" placeholder="Team naam" class="border p-2">
+        <button class="bg-blue-500 text-white px-4 py-2">Toevoegen</button>
     </form>
 
-    <ul>
+    <ul class="bg-white p-4">
         @foreach($teams as $team)
-            <li>{{ $team->naam }}</li>
+            <li class="border-b p-2">{{ $team->name }}</li>
         @endforeach
     </ul>
 </x-base-layout>
