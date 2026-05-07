@@ -1,5 +1,5 @@
 <x-base-layout>
-    <h1 class="text-2xl font-bold mb-4">Teams</h1>
+    <h2 class="text-2xl font-bold mb-4">Teams</h2>
 
     <form method="POST" action="/teams" class="mb-4">
         @csrf

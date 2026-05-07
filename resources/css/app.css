@@ -60,8 +60,18 @@ header, footer {
 }
 
 h1 {
-    font-size: 28px;
+    font-size: 50px;
     margin: 0;
+}
+
+h2{
+    background-color: #27713b;
+     display: inline-block;
+    padding: 8px 18px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: #000000;
 }
 
 /* TABLET */

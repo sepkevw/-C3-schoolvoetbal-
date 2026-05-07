@@ -1,5 +1,5 @@
 <x-base-layout>
-    <h1 class="text-2xl font-bold mb-4">Wedstrijdschema</h1>
+    <h2 class="text-2xl font-bold mb-4">Wedstrijdschema</h2>
 
     <form method="POST" action="{{ route('schema.generate') }}" class="mb-4">
         @csrf

@@ -1,5 +1,5 @@
 <x-base-layout>
-    <h1>Wedstrijd-overzicht</h1>
+    <h2>Wedstrijd-overzicht</h2>
 
     <table border="1">
         <thead>
