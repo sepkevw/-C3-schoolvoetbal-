@@ -3,25 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ env('APP_NAME') }}</title>
-@vite('resources/css/app.css')
+
+    @vite('resources/css/app.css')
 </head>
 <body>
+
 <header>
+    <nav class="navbar">
 
-    <nav>
+        <div class="nav-left">
+            <a href="{{ route('home') }}">home-pagina</a>
+            <a href="{{ route('teams') }}">teams</a>
+        </div>
 
-        <a href="{{ route('home') }}">home-pagina</a>
-        <a href="{{ route('teams') }}">teams</a>
-         <img src="{{ asset('img/football.png') }}" alt="logo" class="logo">
-         <h1>schoolvoetbal</h1>
-        <img src="{{ asset('img/football.png') }}" alt="logo" class="logo">
-        <a href="{{ route('wedstrijden') }}">wedstrijden</a>
-        <a href="{{ route('inzetten') }}">inzetten</a>
+        <div class="nav-center">
+            <img src="{{ asset('img/football.png') }}" alt="logo" class="logo">
+
+            <h1>schoolvoetbal</h1>
+
+            <img src="{{ asset('img/football.png') }}" alt="logo" class="logo">
+        </div>
+
+        <div class="nav-right">
+            <a href="{{ route('wedstrijden') }}">wedstrijden</a>
+            <a href="{{ route('inzetten') }}">inzetten</a>
+        </div>
+
     </nav>
 </header>
-<main>{{ $slot }}</main>
+
+<main>
+    {{ $slot }}
+</main>
+
 <footer></footer>
+
 </body>
 </html>

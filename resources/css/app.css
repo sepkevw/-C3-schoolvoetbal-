@@ -2,33 +2,111 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Eigen styling */
 body {
-    background-color: #000; /* zwart */
-    color: #fff; /* witte tekst zodat je iets ziet */
-    font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    height: 100%;
 }
 
-nav {
-    display: flex;
-    gap: 20px;
-    padding: 16px;
-    background-color: #110139;
-    justify-content: center;
-}
-
-nav a {
+body {
+    background-color: #000;
     color: #fff;
-    text-decoration: none;
+    font-family: 'Instrument Sans', sans-serif;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-nav a:hover {
-    text-decoration: underline;
+main {
+    flex: 1;
 }
 
-.home-page {
+header, footer {
+    background-color: #110139;
+    margin: 0;
+    padding: 60px;
+}
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: center; /* alles dichter bij elkaar */
+    align-items: center;
+
+    padding: 12px 20px;
+    flex-wrap: wrap;
+    gap: 40px; /* ruimte tussen groepen */
+}
+.nav-left,
+.nav-right,
+.nav-center {
     display: flex;
     align-items: center;
     gap: 20px;
-    padding: 40px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-left,
+    .nav-right,
+    .nav-center {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* MOBIEL */
+@media (max-width: 480px) {
+
+    .navbar a {
+        font-size: 16px;
+    }
+
+    .nav-left,
+    .nav-right {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-center {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
 }
