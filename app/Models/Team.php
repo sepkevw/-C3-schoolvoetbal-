@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
 {
-    protected $fillable = [
-        'name',
-        'points',
-        'creator_id'
-    ];
+   protected $fillable = [
+    'name',
+    'points',
+    'creator_id',
+    'location',
+    'event_date'
+];
 }

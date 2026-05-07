@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->integer('points')->default(0);
             $table->unsignedBigInteger('creator_id')->nullable();
+            $table->string('location')->nullable();
+$table->date('event_date')->nullable();
             $table->timestamps();
         });
     }
