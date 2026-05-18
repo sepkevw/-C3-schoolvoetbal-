@@ -26,6 +26,9 @@ class TeamController extends Controller
             'location' => $request->location,
             'event_date' => $request->event_date,
         ]);
+            if (auth()->user()->role !== 'admin') {
+        abort(403);
+            }
 
         return redirect()->back();
     }

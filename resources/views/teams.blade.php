@@ -1,15 +1,15 @@
 <x-base-layout>
-    <h2 class="text-2xl font-bold mb-4">Teams</h2>
+    <h2 class="page-title">Teams</h2>
 
     {{-- FORM --}}
-    <form method="POST" action="/teams" class="mb-6 flex flex-col gap-2 max-w-md">
+    <form method="POST" action="/teams" class="team-form">
         @csrf
 
         <input
             type="text"
             name="name"
             placeholder="Team naam"
-            class="border p-2 rounded"
+            class="form-input"
             required
         >
 
@@ -17,44 +17,47 @@
             type="text"
             name="location"
             placeholder="Locatie (bijv. Amsterdam)"
-            class="border p-2 rounded"
+            class="form-input"
         >
 
         <input
             type="date"
             name="event_date"
-            class="border p-2 rounded"
+            class="form-input"
         >
-
-        <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+    <div class="teams-button">
+           <button class="primary-button">
             Team toevoegen
         </button>
+        </div>
+
     </form>
 
+
     {{-- LIST --}}
-    <div class="bg-white p-4 rounded shadow">
-        <h3 class="text-lg font-semibold mb-2">Gemaakte teams</h3>
+    <div class="team-container">
+        <h3 class="section-title">Gemaakte teams</h3>
 
         @if($teams->count())
-            <ul>
+            <ul class="team-list">
                 @foreach($teams as $team)
-                    <li class="border-b py-2 flex flex-col">
-                        <span class="font-semibold">
+                    <li class="team-item">
+                        <span class="team-name">
                             {{ $team->name }}
                         </span>
 
-                        <span class="text-sm text-gray-600">
+                        <span class="team-meta">
                             📍 {{ $team->location ?? 'Geen locatie' }}
                         </span>
 
-                        <span class="text-sm text-gray-600">
+                        <span class="team-meta">
                             📅 {{ $team->event_date ?? 'Geen datum' }}
                         </span>
                     </li>
                 @endforeach
             </ul>
         @else
-            <p class="text-gray-500">Nog geen teams toegevoegd.</p>
+            <p class="empty-message">Nog geen teams toegevoegd.</p>
         @endif
     </div>
 </x-base-layout>

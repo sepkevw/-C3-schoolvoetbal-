@@ -7,16 +7,11 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::table('teams', function (Blueprint $table) {
-            $table->string('location')->nullable();
-            $table->date('event_date')->nullable();
-        });
+        //
     }
 
     public function down(): void
     {
-        Schema::table('teams', function (Blueprint $table) {
-            $table->dropColumn(['location', 'event_date']);
-        });
+        //
     }
 };

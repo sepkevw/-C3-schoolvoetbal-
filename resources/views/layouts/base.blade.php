@@ -31,6 +31,14 @@
         </div>
 
     </nav>
+    @if(auth()->check() && auth()->user()->role === 'admin')
+    <a href="/teams">Teams beheren</a>
+    <a href="/wedstrijden">Wedstrijden plannen</a>
+@endif
+@if(auth()->check() && auth()->user()->role === 'coach')
+    <a href="/wedstrijden">Wedstrijdinformatie bekijken</a>
+@endif
+
 </header>
 
 <main>
