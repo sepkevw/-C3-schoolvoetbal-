@@ -26,16 +26,18 @@ header, footer {
     margin: 0;
     padding: 60px;
 }
+
 /* NAVBAR */
 .navbar {
     display: flex;
-    justify-content: center; /* alles dichter bij elkaar */
+    justify-content: center;
     align-items: center;
 
     padding: 12px 20px;
     flex-wrap: wrap;
-    gap: 40px; /* ruimte tussen groepen */
+    gap: 40px;
 }
+
 .nav-left,
 .nav-right,
 .nav-center {
@@ -64,9 +66,9 @@ h1 {
     margin: 0;
 }
 
-h2{
+h2 {
     background-color: #d6d6d6;
-     display: inline-block;
+    display: inline-block;
     padding: 8px 18px;
     border-radius: 12px;
     margin-bottom: 20px;
@@ -74,9 +76,61 @@ h2{
     color: #000000;
 }
 
+/* WEDSTRIJD OVERZICHT */
+.page-section {
+    width: min(1100px, 92%);
+    margin: 40px auto;
+}
+
+.table-card {
+    background-color: #ffffff;
+    color: #121826;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.wedstrijd-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.wedstrijd-table th {
+    background-color: #1f3b2c;
+    color: #ffffff;
+    text-align: left;
+    padding: 16px;
+    font-size: 17px;
+}
+
+.wedstrijd-table td {
+    padding: 16px;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.wedstrijd-table tr:last-child td {
+    border-bottom: none;
+}
+
+.wedstrijd-table tbody tr:hover {
+    background-color: #eef7f1;
+}
+
+.versus {
+    display: inline-block;
+    margin: 0 10px;
+    color: #1f3b2c;
+    font-weight: bold;
+}
+
+.empty-message {
+    padding: 24px;
+    color: #121826;
+    font-size: 18px;
+}
+
 /* TABLET */
 @media (max-width: 768px) {
-
     .navbar {
         flex-direction: column;
         text-align: center;
@@ -93,6 +147,10 @@ h2{
         font-size: 22px;
     }
 
+    h2 {
+        font-size: 30px;
+    }
+
     .logo {
         width: 40px;
         height: 40px;
@@ -100,8 +158,51 @@ h2{
 }
 
 /* MOBIEL */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+    .wedstrijd-table,
+    .wedstrijd-table thead,
+    .wedstrijd-table tbody,
+    .wedstrijd-table th,
+    .wedstrijd-table td,
+    .wedstrijd-table tr {
+        display: block;
+    }
 
+    .wedstrijd-table thead {
+        display: none;
+    }
+
+    .wedstrijd-table tr {
+        padding: 14px;
+        border-bottom: 1px solid #d6d6d6;
+    }
+
+    .wedstrijd-table td {
+        border-bottom: none;
+        padding: 8px 0;
+    }
+
+    .wedstrijd-table td::before {
+        display: block;
+        font-weight: bold;
+        color: #1f3b2c;
+        margin-bottom: 4px;
+    }
+
+    .wedstrijd-table td:nth-child(1)::before {
+        content: "Locatie";
+    }
+
+    .wedstrijd-table td:nth-child(2)::before {
+        content: "Teams";
+    }
+
+    .wedstrijd-table td:nth-child(3)::before {
+        content: "Datum";
+    }
+}
+
+@media (max-width: 480px) {
     .navbar a {
         font-size: 16px;
     }
@@ -118,5 +219,9 @@ h2{
 
     h1 {
         font-size: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
     }
 }

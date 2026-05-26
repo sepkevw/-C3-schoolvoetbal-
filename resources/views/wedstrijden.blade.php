@@ -25,7 +25,7 @@
 
 
     <table class="w-full border bg-white">
-        <thead class="bg-gray-200">
+        <thead class="bg-black-200">
             <tr>
                 <th class="p-2">Datum</th>
                 <th>Teams</th>

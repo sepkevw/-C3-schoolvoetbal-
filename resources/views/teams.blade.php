@@ -1,7 +1,7 @@
 <x-base-layout>
     <h2 class="page-title">Teams</h2>
 
-    {{-- FORM --}}
+
     <form method="POST" action="/teams" class="team-form">
         @csrf
 
@@ -34,7 +34,7 @@
     </form>
 
 
-    {{-- LIST --}}
+
     <div class="team-container">
         <h3 class="section-title">Gemaakte teams</h3>
 

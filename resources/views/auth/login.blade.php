@@ -1,4 +1,4 @@
-<x-blade-layout>
+<x-base-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -38,10 +38,16 @@
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
+            <div class="mt-4 text-sm text-gray-600">
+    Nog geen account?
+    <a href="{{ route('register') }}" class="underline text-blue-600 hover:text-blue-800">
+        Registreren
+    </a>
+</div>
 
             <x-primary-button class="ms-3">
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
     </form>
-</x-blade-layout>
+</x-base-layout>

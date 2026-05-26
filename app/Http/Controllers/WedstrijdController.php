@@ -8,13 +8,20 @@ use Illuminate\Http\Request;
 
 class WedstrijdController extends Controller
 {
-    public function index()
-    {
-        $wedstrijden = Wedstrijd::with(['team1', 'team2'])->get();
-        $teams = Team::all();
+  public function home()
+{
+    $wedstrijden = Wedstrijd::with(['team1', 'team2'])->get();
 
-        return view('wedstrijden', compact('wedstrijden', 'teams'));
-    }
+    return view('home', compact('wedstrijden'));
+}
+
+public function index()
+{
+    $wedstrijden = Wedstrijd::with(['team1', 'team2'])->get();
+    $teams = Team::all();
+
+    return view('wedstrijden', compact('wedstrijden', 'teams'));
+}
 
     public function generate(Request $request)
     {

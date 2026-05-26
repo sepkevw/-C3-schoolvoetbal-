@@ -14,7 +14,12 @@
 
         <div class="nav-left">
             <a href="{{ route('home') }}">home-pagina</a>
-            <a href="{{ route('teams') }}">teams</a>
+
+            @auth
+                @if(auth()->user()->role === 'admin')
+                    <a href="{{ route('teams') }}">teams</a>
+                @endif
+            @endauth
         </div>
 
         <div class="nav-center">
@@ -26,19 +31,24 @@
         </div>
 
         <div class="nav-right">
-            <a href="{{ route('wedstrijden') }}">wedstrijden</a>
-            <a href="{{ route('inzetten') }}">inzetten</a>
+            @auth
+                @if(auth()->user()->role === 'admin')
+                    <a href="{{ route('wedstrijden') }}">wedstrijden</a>
+                @endif
+
+                <a href="{{ route('inzetten') }}">inzetten</a>
+
+                <form method="POST" action="{{ route('logout') }}" class="logout-form">
+                    @csrf
+                    <button type="submit" class="nav-button">uitloggen</button>
+                </form>
+            @else
+                <a href="{{ route('login') }}">inloggen</a>
+                <a href="{{ route('register') }}">registreren</a>
+            @endauth
         </div>
 
     </nav>
-    @if(auth()->check() && auth()->user()->role === 'admin')
-    <a href="/teams">Teams beheren</a>
-    <a href="/wedstrijden">Wedstrijden plannen</a>
-@endif
-@if(auth()->check() && auth()->user()->role === 'coach')
-    <a href="/wedstrijden">Wedstrijdinformatie bekijken</a>
-@endif
-
 </header>
 
 <main>
